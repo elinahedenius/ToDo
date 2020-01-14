@@ -13,7 +13,7 @@ class tasks():
         task.due = due
         task.list = list
 
-    def makeNew():
+    def makeNewTask():
         newTaskName = input('Task name: ')
         newTaskDate = input('Task due date: ')
 
@@ -28,7 +28,7 @@ class tasks():
                 createNewList = input('That is not a list. Do you want to create it? (y/n)')
                 if createNewList == 'y':
                     newListList = ('Put into this list as a sublist (type none for none): ')
-                    lists.makeNewFromScratch(newTaskList, newListList)
+                    lists.makeNewList()
                     print('You have sucessfully added ' + newTaskName + ' to the list ' + newTaskList + '.')
                 elif createNewList == 'n':
                     print('ok!')
@@ -43,7 +43,7 @@ class lists():
         list.name = name
         list.list = listToBeIn
 
-    def makeNew():
+    def makeNewList():
         newListName = input('List name: ')
         newListList = input('Put into this list as a sublist (type none for none): ')
 
@@ -57,7 +57,7 @@ while True:
     choice = input('What do you want to do (create new task -> ct, create new list -> cl)')
 
     if choice == 'ct':
-        tasks.makeNew()
+        tasks.makeNewTask()
 
     elif choice == 'cl':
-        lists.makeNew()
+        lists.makeNewList()
